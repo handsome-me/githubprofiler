@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import logo from './logo192.png';
 import './App.css';
+import  Searchbox from './component/searchBox'
+import { connect } from 'react-redux';
+import CountInfo from './component/countInfo';
 
-function App() {
+
+
+function App(props) {
+   console.log(props);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Searchbox></Searchbox>
+       <CountInfo></CountInfo>
     </div>
+    
   );
 }
 
-export default App;
+//export default App;
+function mapStateToProps(state) {
+  
+
+  return {
+  //  posts: state.posts,
+  //  auth: state.auth,
+  state:state.auth
+  };
+}
+
+ 
+
+export default connect(mapStateToProps)(App);

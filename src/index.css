@@ -5,9 +5,90 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+     background-color: #f1f5f8;;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.searchDiv{
+
+  
+  border: 1px solid black;
+  
+   margin-top: 17%;
+   width: 70%;
+   margin-left: 10%;
+   padding: 0px;
+}
+
+input{
+
+  width: 80%;
+  background-color: white;
+  border: none;
+
+}
+
+.button {
+   
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.detailInfo{
+
+  width: 30%;
+  border: red solid 1px;
+
+}
+
+
+.div1{
+
+  display: flex;
+   
+   border:  black solid 1px;
+   
+    padding: 1px;
+    margin: 2%;
+    flex-wrap: wrap;
+    background-color: #f1f5f8;
+   
+ 
+    
+
+}
+
+.detailInfo{
+
+  margin: 2%;
+  width:270px;
+  display: flex;
+  text-align: center;
+   background-color: white;
+  justify-content: center;
+ 
+  
+   
+}
+
+ 
