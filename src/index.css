@@ -91,4 +91,58 @@ input{
    
 }
 
+.section{
+
+  display: flex;
+  flex-direction: row;
+  margin: 3%;
+   
+}
+
+header{
+
+  display: flex;
+  flex-direction: row;
+
+}
  
+ img{
+
+  width: 70px;
+  height: 20%;
+  border-radius: 50%;
+
+}
+
+.articles{
+
+  border: 1px solid red;
+  width: 500px;
+  padding: 10px;
+
+
+}
+
+.follwoinglist{
+
+  height: 250px;
+  overflow:scroll;
+}
+.follwoinglist img{
+  width: 45px;
+  height: 20%;
+  
+
+
+}
+.link p{
+ 
+  display:flex;
+  text-align: center;
+
+}
+
+div{
+  display: block;
+
+}

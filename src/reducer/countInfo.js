@@ -5,7 +5,7 @@ const initialCountInfostate={
     following:0,
     followers:0,
     repos:0,
-    gist:0
+    gists:0
 
       
 
@@ -14,15 +14,23 @@ const initialCountInfostate={
 export default function auth(state=initialCountInfostate, action) {
     switch (action.type) {
       case "displayCountInfoData":
-        return {
-          ...state,
-           
-        };
-        case "countInfoData":
+        {
+          return {
+            ...state,
+             
+          }
+        }
+        
+        case "countInfoData":{
+          console.log("into countinfoData", state);
           return{
-            ...state
+           
+            ...state,
+            ...action.data
 
           }
+        }
+           
        
       default:
         return state;

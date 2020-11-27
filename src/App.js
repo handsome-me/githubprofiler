@@ -7,7 +7,8 @@ import CountInfo from './component/countInfo';
 
 
 function App(props) {
-   console.log(props);
+   //console.log(props);
+
   return (
     <div className="App">
        <Searchbox></Searchbox>
@@ -16,8 +17,8 @@ function App(props) {
     
   );
 }
+ 
 
-//export default App;
 function mapStateToProps(state) {
   
 

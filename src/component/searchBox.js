@@ -2,10 +2,12 @@
 import  React  from 'react';
 
 import { connect } from 'react-redux';
-import {login} from '../action/fetchData'
+import {login} from '../action'
+import auth from '../reducer/countInfo';
 // 
 function Searchbox(props)
 {
+    console.log("into searchBox", props);
     function handleClick(){
        
         console.log("into handle search");
@@ -13,7 +15,7 @@ function Searchbox(props)
         console.log(props.dispatch(login()));
 
     }
-
+     
     return (
 
 
@@ -35,6 +37,7 @@ function Searchbox(props)
 function mapStateToProps(state) {
     return {
      // auth: state.auth,
+     state:state.auth
     };
   }
   export default connect(mapStateToProps)(Searchbox);
