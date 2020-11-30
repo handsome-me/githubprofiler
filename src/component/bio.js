@@ -8,8 +8,27 @@ import Follower from '../component/followers';
   
   render(){
 
-        console.log("into Bio", this.props.data);
-        const {name , bio, blog, company, location}= this.props.data.bio;
+
+        console.log("into Bio", this.props);
+       
+       const check= this.props.data.bio.state.state;
+
+        
+          
+         
+
+                 
+                 const {name , bio, blog, company, location} =check==undefined?this.props.data.bio.state:this.props.data.bio.state.state
+      
+          
+         
+        
+           
+
+
+        
+
+        //console.log(this.props.data.bio);
         const articleList=[];
         for(let i=0;i<20;i++)
         {

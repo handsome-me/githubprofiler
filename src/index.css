@@ -146,3 +146,17 @@ div{
   display: block;
 
 }
+
+.chart{
+
+  width:50%;
+
+}
+.chartCollection{
+
+  display: flex;
+ 
+  padding: 20px;
+
+  
+}

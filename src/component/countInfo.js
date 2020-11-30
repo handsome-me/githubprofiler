@@ -3,6 +3,7 @@ import Follower from '../component/followers';
   import {connect} from 'react-redux';
   import Bio from '../component/bio';
 
+
 class CountInfo extends Component{
 
  
@@ -46,7 +47,8 @@ function mapStateToProps(state) {
     return {
      // auth: state.auth,
      state:state.auth,
-     bio:state.bio
+     bio:state.bio,
+     mostPopularData:state.mostPopularData
     };
   }
   export default connect(mapStateToProps)(CountInfo);
