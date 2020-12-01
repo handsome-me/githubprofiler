@@ -1,6 +1,6 @@
 import  React ,{Component} from 'react';
 import Follower from '../component/followers';
-  import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 
 
   class Bio extends Component{
@@ -11,28 +11,46 @@ import Follower from '../component/followers';
 
         console.log("into Bio", this.props);
        
-       const check= this.props.data.bio.state.state;
+       const check= this.props.bio;
+     const bioData= this.props.bio;
 
+       
         
-          
-         
-
-                 
-                 const {name , bio, blog, company, location} =check==undefined?this.props.data.bio.state:this.props.data.bio.state.state
+      // const {name , bio, blog, company, location}=check==undefined?this.props.bio.state:this.props.bio;
+      const {name , bio, blog, company, location}=this.props.bio;
+       console.log("DATA________-----_____- ",bioData);
+        console.log("Data__2___----___",name);
       
           
          
-        
-           
-
-
+           const followerList=this.props.followersList;
         
 
+           console.log("followersList", followerList );
         //console.log(this.props.data.bio);
         const articleList=[];
-        for(let i=0;i<20;i++)
+        console.log("lkvnlvflv fd fl fd "  );
+        const lenghtOfObject=Object.keys(followerList).length;
+
+        for(let i=0;i<lenghtOfObject;i++)
         {
-            articleList.push(<article>Data</article>);
+        
+        const   image_url=followerList[i].avatar;
+      const user_name=followerList[i].login;
+      const url="https://github.com/"+user_name;
+             
+             //  console.log(user_name);
+
+
+            articleList.push(
+            <article style={{display:"flex", flexDirection:"row"}}>
+            <img src={image_url} alt={image_url}/>
+            <div >
+            <h4 style={{margin:0, textAlign:"left"}}>{user_name}</h4>
+            <a href={url}>  https://github.com/{user_name}</a>
+            </div>
+            </article>
+            );
         }
 
         return(
@@ -44,7 +62,7 @@ import Follower from '../component/followers';
             
             <article className="article" >
             <header>
-            <img src="https://avatars0.githubusercontent.com/u/1327050?v=4" alt="Arnav Gupta"></img>
+            <img href="https://avatars0.githubusercontent.com/u/1327050?v=4" alt="Arnav Gupta"></img>
             <div>
                 <p>{name}</p>
                 <p>john@deo</p>
@@ -109,11 +127,15 @@ import Follower from '../component/followers';
   }
 
  
-  export  default Bio;
-/*function mapStateToProps(state) {
+ // export  default Bio;
+ function mapStateToProps(state) {
+
     return {
      // auth: state.auth,
-     state:state.auth
+     bio:state.bio,
+     followersList:state.followersList
+
     };
+
   }
-  export default connect(mapStateToProps)(Bio);*/
+  export default connect(mapStateToProps)(Bio);//*/

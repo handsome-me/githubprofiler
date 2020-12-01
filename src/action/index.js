@@ -118,19 +118,67 @@ export function getReposData(url)
 }
 
 
+export function getFollowersList(url)
+{
+  return (dispatch)=>{
+
+    console.log("into getFollowersList Function");
+
+    fetch(url,{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;',
+      }
+
+
+    }).then(response=>response.json())
+    .then((data)=>{
+
+       console.log("FollowersList, GOT it", data);
+         
+            let dataSet=[]
+            for(let i=0;i<data.length;i++)
+            {
+              let tempObj={
+                login:"",
+                avatar_url:"",
+                profile_url:""
+              }
+
+              tempObj.login=data[i].login;
+              tempObj.avatar_url=data[i].avatar_url;
+              tempObj.profile_url='https://github.com/'+tempObj.login;
+              
+              dataSet.push(tempObj);
+
+
+            }
+
+       dispatch(setFollowerlist(dataSet));
+
+
+    })
+
+
+  }
+
+
+}
+
 export function login(email, password) {
-    return (dispatch) => 
+    return async(dispatch) => 
     {
       //dispatch(startLogin());
       const url = "https://api.github.com/users/championswimmer" ;  //APIUrls.login();
-      fetch(url, {
+      const res=fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json;',
         }
         //body: getFormBody({ email, password }),
-      })
-        .then((response) => response.json())
+      });
+      
+      res.then((response) => response.json())
         .then((data) => {
           console.log('data', data);
          // if (data.success) {
@@ -145,6 +193,7 @@ export function login(email, password) {
                 repos:data.public_repos,
 
               } 
+
               const obj2={
 
                 bio:data.bio,
@@ -156,12 +205,17 @@ export function login(email, password) {
 
               }
              // console.log("object2",obj2);
+              
               dispatch(saveCountInfo(obj));
+             // console.log("Bio Obj2", obj2);
+
+             console.log("calling SaveBio...");
               dispatch(saveBio(obj2));
               
               dispatch(getReposData(data.repos_url));
-
-              
+              dispatch(getFollowersList(data.followers_url));
+             
+               
               
 
             // dispatch action to save user
@@ -172,14 +226,18 @@ export function login(email, password) {
         
          // dispatch(loginFailed(data.message));
         });
+        
+         
         console.log("asychronous code");
+        
+
     };
   
 }
 
 export function saveCountInfo(data){
 
-  console.log("action called, saveCountinfo");
+  console.log("action called, saveCountinfo", data);
     return{
         type:"countInfoData",
         data:data
@@ -190,7 +248,7 @@ export function saveCountInfo(data){
 }
 
 export function saveBio(data){
-  console.log("action called, saveBio");
+  console.log("action called, saveBio",data);
     return{
         type:"saveBio",
         data:data
@@ -216,7 +274,19 @@ export function setReposData(data)
 
 }
 
+export function setFollowerlist(data)
+{
+  console.log("into  action, setFollowersList", data);
 
+  return{
+
+ type:"setFollowers",
+ data:data
+
+  }
+
+
+}
 export function setForkedData(data){
   
   console.log("action called. setForkedData", data);
@@ -227,7 +297,6 @@ export function setForkedData(data){
     data:data
     
   }
-
 
 }
 

@@ -25,6 +25,7 @@ const initialState={
 export default function mostPopularData( state=initialState, action)
     {
         console.log("into reducer, mostPopular", action.data);
+        console.log("mostpopular");
         switch(action.type){
 
           case "saveReposData":{

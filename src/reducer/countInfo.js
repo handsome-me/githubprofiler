@@ -29,6 +29,7 @@ export default function auth(state=initialCountInfostate, action) {
             ...action.data
 
           }
+          
         }
            
        

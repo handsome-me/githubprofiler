@@ -15,6 +15,7 @@ class CountInfo extends Component{
         
         const state= this.props;
 
+         console.log("into countInfo", state);
         return(
        
             <div> 
@@ -31,7 +32,7 @@ class CountInfo extends Component{
             <div className="div 2" >
 
             
-             <Bio data={state}></Bio>
+             <Bio></Bio>
 
             </div>
 
@@ -47,8 +48,8 @@ function mapStateToProps(state) {
     return {
      // auth: state.auth,
      state:state.auth,
-     bio:state.bio,
-     mostPopularData:state.mostPopularData
+     mostPopularData:state.mostPopularData,
+     followersList:state.followersList
     };
   }
   export default connect(mapStateToProps)(CountInfo);

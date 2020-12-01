@@ -3,12 +3,14 @@ import { combineReducers } from 'redux';
  import auth from './countInfo';
  import bio from './bio';
  import mostPopularData from './mostPopular';
+ import followersList from './followersList';
 
 export default combineReducers({
  // posts,
   //auth,
   auth,
   bio,
-  mostPopularData
+  mostPopularData,
+  followersList
 
 });

@@ -11,7 +11,7 @@ import Chart from './component/chartData';
 function App(props) {
    
 
-    
+    console.log('into App.js', props);
    
 
   return (
@@ -41,7 +41,8 @@ function mapStateToProps(state) {
   //  posts: state.posts,
   //  auth: state.auth,
   state:state.auth,
-  mostPopularData:state.mostPopularData
+  mostPopularData:state.mostPopularData,
+  bio:state.bio
   };
 }
 

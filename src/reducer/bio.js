@@ -1,10 +1,10 @@
 const initialCountInfostate={
 
-     bio:"",
-     blog:"",
-     company:"",
-     name:"",
-     location:"",
+     bio:"cdc",
+     blog:"cdcd",
+     company:"cdcd",
+     name:"cdcdc",
+     location:"cdcdcdc",
 
       
 
@@ -18,18 +18,36 @@ export default function bio(state=initialCountInfostate, action){
         case "saveBio":
         {
             console.log("into saveBio", action.data);
-          return {
+
+
+            return{
+               
+                ...state,
+                ...action.data
+
+            }
+
+
+          /*return {
 
             ...state,
-           ...action.data
-             
+            bio:action.data.bio,
+            blog:action.data.blog,
+            company:action.data.company,
+            name:action.data.name,
+            location:action.data.location,
 
-          }
+
+             
+          }*/
+
+
         }
 
         default:{
             return{
-                state
+
+               ...state
             }
         }
 
