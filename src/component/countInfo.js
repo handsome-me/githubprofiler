@@ -21,11 +21,11 @@ class CountInfo extends Component{
             <div> 
             <div className="div1">
 
-                 <Follower data={{state:state,title:"Repos"}}></Follower>
-                 <Follower data={{state:state,title:"Followers"}}></Follower>
+                 <Follower data={{state:state,title:"Repos",color:"red"}}></Follower>
+                 <Follower data={{state:state,title:"Followers",color:"pink"}}></Follower>
             
-                 <Follower data={{"state":state,title:"Following"}}></Follower>
-                 <Follower data={{"state":state,title:"Gists"}}></Follower>
+                 <Follower data={{"state":state,title:"Following",color:"green"}}></Follower>
+                 <Follower data={{"state":state,title:"Gists",color:"yellow"}}></Follower>
             
             </div>
             

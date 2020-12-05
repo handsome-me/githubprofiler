@@ -35,7 +35,8 @@ import {connect} from 'react-redux';
         for(let i=0;i<lenghtOfObject;i++)
         {
         
-        const   image_url=followerList[i].avatar;
+        const   image_url=followerList[i].avatar_url;
+        console.log("Image_url",image_url);
       const user_name=followerList[i].login;
       const url="https://github.com/"+user_name;
              
@@ -43,9 +44,9 @@ import {connect} from 'react-redux';
 
 
             articleList.push(
-            <article style={{display:"flex", flexDirection:"row"}}>
+            <article style={{display:"flex", flexDirection:"row",marginTop:10,marginBottom:10}}>
             <img src={image_url} alt={image_url}/>
-            <div >
+            <div className="one" >
             <h4 style={{margin:0, textAlign:"left"}}>{user_name}</h4>
             <a href={url}>  https://github.com/{user_name}</a>
             </div>
@@ -61,8 +62,9 @@ import {connect} from 'react-redux';
 
             
             <article className="article" >
+         
             <header>
-            <img href="https://avatars0.githubusercontent.com/u/1327050?v=4" alt="Arnav Gupta"></img>
+            <img src="https://avatars0.githubusercontent.com/u/1327050?v=4" alt="Arnav Gupta"></img>
             <div>
                 <p>{name}</p>
                 <p>john@deo</p>
@@ -104,18 +106,14 @@ import {connect} from 'react-redux';
 
            <div className="articles">
 
+          <article> 
               <div className="follwoinglist">
 
-              <article style={{display:"flex", flexDirection:"row"}}>
-              <img src="https://avatars3.githubusercontent.com/u/972036?v=4" alt="stelios97"/>
-              <div >
-              <h4 style={{margin:0, textAlign:"left"}}>stelios97</h4>
-              <a href="https://github.com/stelios97" >https://github.com/stelios97</a>
-              </div>
-              </article>
+              
                
                {articleList}
               </div> 
+              </article>
            </div>
             </section>
 
