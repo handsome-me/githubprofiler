@@ -5,7 +5,7 @@ import { connect, connectAdvanced } from 'react-redux';
 import CountInfo from './component/countInfo';
 import {Bar} from 'react-chartjs-2';
 import Chart from './component/chartData';
-
+ import lru from   'lru-cache';
 
 
 function App(props) {
@@ -13,6 +13,11 @@ function App(props) {
 
     console.log('into App.js', props);
    
+
+                                               
+  
+    // maxAge is in ms
+    
 
   return (
     <div className="App">
@@ -48,4 +53,8 @@ function mapStateToProps(state) {
 
  
 
+ 
+
 export default connect(mapStateToProps)(App);
+ 
+ 

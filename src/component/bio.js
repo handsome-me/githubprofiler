@@ -45,7 +45,7 @@ import {connect} from 'react-redux';
 
             articleList.push(
             <article style={{display:"flex", flexDirection:"row",marginTop:10,marginBottom:10}}>
-            <img src={image_url} alt={image_url}/>
+            <img src={image_url} loading="lazy" alt={image_url}/>
             <div className="one" >
             <h4 style={{margin:0, textAlign:"left"}}>{user_name}</h4>
             <a href={url}>  https://github.com/{user_name}</a>
