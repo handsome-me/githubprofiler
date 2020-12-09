@@ -5,6 +5,7 @@ const initialCountInfostate={
      company:"cdcd",
      name:"cdcdc",
      location:"cdcdcdc",
+     avatar_url:""
 
       
 

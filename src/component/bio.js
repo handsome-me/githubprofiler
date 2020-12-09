@@ -13,11 +13,11 @@ import {connect} from 'react-redux';
        
        const check= this.props.bio;
      const bioData= this.props.bio;
-
+     
        
         
       // const {name , bio, blog, company, location}=check==undefined?this.props.bio.state:this.props.bio;
-      const {name , bio, blog, company, location}=this.props.bio;
+      const {name ,avatar_url, bio, blog, company, location}=this.props.bio;
        console.log("DATA________-----_____- ",bioData);
         console.log("Data__2___----___",name);
       
@@ -64,10 +64,10 @@ import {connect} from 'react-redux';
             <article className="article" >
          
             <header>
-            <img src="https://avatars0.githubusercontent.com/u/1327050?v=4" alt="Arnav Gupta"></img>
+            <img src={avatar_url} alt="Cannot fetch image"></img>
             <div>
                 <p>{name}</p>
-                <p>john@deo</p>
+                <p>Build with ❤️ </p>
                 
             </div>
 

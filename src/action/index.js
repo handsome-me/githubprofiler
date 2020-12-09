@@ -165,11 +165,11 @@ export function getFollowersList(url)
 
 }
 
-export function login(email, password) {
+export function login(userName) {
     return async(dispatch) => 
     {
       //dispatch(startLogin());
-      const url = "https://api.github.com/users/championswimmer" ;  //APIUrls.login();
+      const url = "https://api.github.com/users/"+userName;  //APIUrls.login();
       const res=fetch(url, {
         method: 'GET',
         headers: {
@@ -200,7 +200,8 @@ export function login(email, password) {
                 company:data.company,
                 blog:data.blog,
                 name:data.name,
-                location:data.location
+                location:data.location,
+                avatar_url:data.avatar_url
 
 
               }

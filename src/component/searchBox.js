@@ -5,16 +5,29 @@ import { connect } from 'react-redux';
 import {login} from '../action'
 import auth from '../reducer/countInfo';
 // 
+
+ 
 function Searchbox(props)
 {
+
+
+     let userName="";
     console.log("into searchBox", props);
-    function handleClick(){
+    function handleClick(e){
        
         console.log("into handle search");
 
-        console.log(props.dispatch(login()));
+        console.log(props.dispatch(login(userName)));
 
     }
+
+    function handleChange(e)
+{
+
+    userName=e.target.value;
+    console.log("into handleCHange", userName);
+
+}
      
     return (
 
@@ -22,8 +35,8 @@ function Searchbox(props)
 
         <div className="searchDiv">
 
- 
-        <input  type="TextBox" ></input>
+        
+        <input  type="TextBox" onChange={handleChange}></input>
         <button className="button" onClick={handleClick}>Search</button>
         
          
