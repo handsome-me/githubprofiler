@@ -16,6 +16,8 @@ ReactDOM.render(
     domain="dev-w7tg4ueq.us.auth0.com"
     clientId="4sv24WYTZBCDPG2Avu53zrfN3F1jvqLs"
     redirectUri={window.location.origin}
+    cacheLocation="localstorage"
+    
   > 
     <React.StrictMode>
       <App />
