@@ -10,24 +10,24 @@ import { Auth0Provider } from "@auth0/auth0-react";
 const store = configureStore();
 
 ReactDOM.render(
+ 
+<Provider store={store}>
 <Auth0Provider
     domain="dev-w7tg4ueq.us.auth0.com"
     clientId="4sv24WYTZBCDPG2Avu53zrfN3F1jvqLs"
     redirectUri={window.location.origin}
   > 
-<Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
+    </Auth0Provider>
   </Provider>,
-  
-  </Auth0Provider>
-, document.getElementById('root'));
+ document.getElementById('root'));
  
 
 console.log("Index.js state",store);
 //when the page loads first time , we are calling dispatch for fetching data of championswimmer
-store.dispatch(login("championswimmer"));
+//store.dispatch(login("championswimmer"));
 
  
 // If you want to start measuring performance in your app, pass a function

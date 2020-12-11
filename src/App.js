@@ -9,7 +9,7 @@ import Chart from './component/chartData';
  import { useAuth0 } from '@auth0/auth0-react';
 
 function App(props) {
-   
+  
   const {
     isLoading,
     isAuthenticated,
@@ -18,14 +18,19 @@ function App(props) {
     loginWithRedirect,
     logout,
   } = useAuth0();
-
+  
     console.log('into App.js', props);
-    
+    console.log("isAuthenticated----____---->>>>",useAuth0());
+   
     if (error) {
       
       return <div>Oops... {error.message}</div>;
     }
+    if (isLoading) {
+     
+     return <div>Loading...</div>
   
+    }
     
     if (isAuthenticated) {
       return (
@@ -51,12 +56,9 @@ function App(props) {
          
       
     } else {
-      if (isLoading) {
-        console.log("isAuthenticated , please check if the user is authenticated",isAuthenticated);
-       return <div>Loading...</div>
-    
-      }
+      
       return <button onClick={loginWithRedirect}>Log in</button>;
+
     }
      
  
