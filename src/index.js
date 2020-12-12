@@ -29,7 +29,7 @@ ReactDOM.render(
 
 console.log("Index.js state",store);
 //when the page loads first time , we are calling dispatch for fetching data of championswimmer
-//store.dispatch(login("championswimmer"));
+store.dispatch(login("championswimmer"));
 
  
 // If you want to start measuring performance in your app, pass a function
