@@ -19,7 +19,7 @@ import {connect} from 'react-redux';
       // const {name , bio, blog, company, location}=check==undefined?this.props.bio.state:this.props.bio;
       const {name ,avatar_url, bio, blog, company, location}=this.props.bio;
        console.log("DATA________-----_____- ",bioData);
-        console.log("Data__2___----___",name);
+        console.log("Data_2___----___",name);
       
           
          
