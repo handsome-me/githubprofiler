@@ -273,3 +273,29 @@ content:"user";
   display: flex;
   flex-wrap: wrap;
 }
+
+.container{
+  width: 90vw;
+    max-width: 600px;
+    text-align: center;
+    border:1px solid black;
+    
+}
+
+.imageSec {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.imageSec button {
+  
+  background: #2caeba;
+}
+
+.imageSec img{
+  width: 100%;
+  display: block;
+}

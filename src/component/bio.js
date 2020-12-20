@@ -1,6 +1,8 @@
-import  React ,{Component} from 'react';
+import  React ,{Component, createContext} from 'react';
 import Follower from '../component/followers';
+ 
 import {connect} from 'react-redux';
+
 
 
   class Bio extends Component{

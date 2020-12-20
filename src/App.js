@@ -7,8 +7,9 @@ import {Bar} from 'react-chartjs-2';
 import Chart from './component/chartData';
  import lru from   'lru-cache';
  import { useAuth0 } from '@auth0/auth0-react';
+ import  logoImage from './static/images/logo.svg'
 
-function App(props) {
+ function App(props) {
   
   const {
     isLoading,
@@ -57,12 +58,37 @@ function App(props) {
       
     } else {
       
-      return <button onClick={loginWithRedirect}>Log in</button>;
+      return(
 
-    }
+        <section className="imageSec">
+ <div class="container">
+      
+      <div>
+
+        <img src={logoImage} alt="image"></img>
+      </div>
+     
+    <button  class="btn" onClick={loginWithRedirect}>Log In / Sign Up</button>
+
+    </div>
+        </section>
+      
+  
+      
+      );
+      }
+      
+      
+      
+
+    
      
  
 }
+       
+
+    
+ 
  
 
 function mapStateToProps(state) {
